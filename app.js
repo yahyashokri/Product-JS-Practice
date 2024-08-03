@@ -45,7 +45,7 @@ var products = [
        return pTag;
      }
   function createATag() {
-         var aTag = document.createElement("a");
+         var aTag = document.createElement("img");
          return aTag;
   }
   function callProducts(){
@@ -76,7 +76,7 @@ var products = [
         }
       else if (element == "imageSrc") {
         var tag = createATag()
-          tag.setAttribute("href", objectValue)
+          tag.setAttribute("src", objectValue)
           tag.setAttribute("class", "img")
           tag.innerText = "Image"
           document.getElementById(`product${index+1}`).appendChild(tag)

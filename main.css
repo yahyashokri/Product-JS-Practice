@@ -20,13 +20,16 @@ body{
 .img{
     grid-area: 1/1/2/2;
     display: block;
+    width: 95%;
+    height: 97%;
+    margin: 5px;
 }
 .txt{
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 10px;
+    font-size: 25px;
 }
 
 .pTxt{
