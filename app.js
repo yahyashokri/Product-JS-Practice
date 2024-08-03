@@ -58,26 +58,27 @@ var products = [
         var tag = createPTag();
         tag.innerText = element + ": " + objectValue
         tag.setAttribute("class", "txt")
-        document.getElementById(`product${index+1}`).appendChild(tag)
+        document.getElementById(`producttxt${index+1}`).appendChild(tag)
       }
-      if (element == "hasDiscount") {
+      else if (element == "hasDiscount") {
         if (objectValue == true) {
           var tag = createPTag()
           tag.innerText = "Discount" + ": " + "Yes"
           tag.setAttribute("class", "txt")
-          document.getElementById(`product${index+1}`).appendChild(tag)
+          document.getElementById(`producttxt${index+1}`).appendChild(tag)
         }
         else if (objectValue == false) {
           var tag = createPTag()
           tag.innerText = "Discount" + ": " + "No"
           tag.setAttribute("class", "txt")
-          document.getElementById(`product${index+1}`).appendChild(tag)
+          document.getElementById(`producttxt${index+1}`).appendChild(tag)
         }
         }
-      if (element == "imageSrc") {
+      else if (element == "imageSrc") {
         var tag = createATag()
           tag.setAttribute("href", objectValue)
           tag.setAttribute("class", "img")
+          tag.innerText = "Image"
           document.getElementById(`product${index+1}`).appendChild(tag)
       };
 
@@ -86,4 +87,3 @@ var products = [
      })
     }
   }
-  callProducts()

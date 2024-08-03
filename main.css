@@ -19,23 +19,34 @@ body{
 }
 .img{
     grid-area: 1/1/2/2;
+    display: block;
 }
 .txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.2em;
-    list-style-type: none;
+    font-size: 10px;
+}
+
+.pTxt{
+    grid-area: 1/2/2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: #333;
-    line-height: 1.6;
     text-align: center;
-    margin: 10px;
-    margin-right: 40px;
-    padding: 1px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    grid-area: 1/2/2/3;
+    margin: 3px;
+}
+.pTxt:hover {
+    background-color: #bebcbc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 .btn{
     grid-area: 4/1/5/3;
