@@ -51,15 +51,16 @@ var products = [
   function callProducts(){
     for (var index = 0; index < products.length; index++) {
       var product = products[index];
-     var objectKey = Object.keys(product)
-     objectKey.forEach( function(element) {
-      var objectValue = product[element]
-      if (objectKey == "name" || objectKey == "price" || objectKey == "id") {
-        var tag = createPTag()
-        tag.innerText = objectKey + ": " + objectValue
+     var objectKeys = Object.keys(product);
+     objectKeys.forEach( function(element) {
+      var objectValue = product[element];
+      if (element == "name" || element == "price" || element == "id") {
+        var tag = createPTag();
+        tag.innerText = element + ": " + objectValue
         tag.setAttribute("class", "txt")
+        document.getElementById(`product${index+1}`).appendChild(tag)
       }
-      else if (objectKey == "hasDiscount") {
+      if (element == "hasDiscount") {
         if (objectValue == true) {
           var tag = createPTag()
           tag.innerText = "Discount" + ": " + "Yes"
@@ -72,21 +73,17 @@ var products = [
           tag.setAttribute("class", "txt")
           document.getElementById(`product${index+1}`).appendChild(tag)
         }
-      else if (objectKey == "imageSrc") {
+        }
+      if (element == "imageSrc") {
         var tag = createATag()
           tag.setAttribute("href", objectValue)
           tag.setAttribute("class", "img")
           document.getElementById(`product${index+1}`).appendChild(tag)
-      }
+      };
 
-      }
+      
 
      })
     }
   }
-  function clickBtn(){
-    if (document.getElementsByClassName("txt") == null) {
-      callProducts()
-    }
-    else{}
-  }
+  callProducts()
